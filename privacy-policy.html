@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>焱焱APP 隐私政策</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-primary: #1a1a1a;
+      --color-primary-light: #f2f2f2;
+      --color-text-main: #1a1a1a;
+      --color-text-secondary: #555;
+      --color-text-muted: #888;
+      --color-border: #e8e8e8;
+      --color-bg: #f7f7f7;
+      --color-card: #ffffff;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--color-text-main);
+      background: var(--color-bg);
+      padding: 0 0 60px;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      background: #ffffff;
+      padding: 36px 24px 28px;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      color: var(--color-text-main);
+    }
+    .page-header .meta {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Main container ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 24px 16px 0;
+    }
+
+    /* ── Notice banner ── */
+    .notice-banner {
+      background: #f5f5f5;
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .notice-banner strong { color: #1a1a1a; }
+
+    /* ── Section cards ── */
+    .section-card {
+      background: var(--color-card);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px 9px;
+      background: #fff;
+    }
+    .section-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-main);
+    }
+
+    .section-body {
+      padding: 10px 20px 24px;
+    }
+
+    /* ── Typography inside sections ── */
+    .section-body p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    .section-body h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-main);
+      margin: 9px 0 8px;
+    }
+    .section-body h3:first-child { margin-top: 0; }
+
+    .section-body ol, .section-body ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .section-body ol li {
+      counter-increment: item;
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+    .section-body ol { counter-reset: item; }
+    .section-body ol li::before {
+      content: counter(item) ".";
+      color: #1a1a1a;
+      font-weight: 600;
+      font-size: 13px;
+      min-width: 18px;
+      padding-top: 1px;
+    }
+
+    .section-body ul li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+    .section-body ul li::before {
+      content: "•";
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--color-primary-light);
+      color: #333;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .highlight-box {
+      background: #f0f6ff;
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #1a4080;
+      line-height: 1.7;
+      margin: 12px 0;
+    }
+
+    .disclaimer-box {
+      background: #f5f5f5;
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.7;
+      margin: 12px 0;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--color-card);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      margin-bottom: 16px;
+    }
+    .contact-card h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-card h2 .icon-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+    }
+    .contact-item:last-child { padding-bottom: 0; }
+    .contact-item .label {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      min-width: 64px;
+      padding-top: 2px;
+    }
+    .contact-item .value {
+      font-size: 14px;
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+    .contact-item .value a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      padding: 32px 20px 16px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .page-header { padding: 28px 16px 22px; }
+      .page-header h1 { font-size: 18px; }
+      .container { padding: 16px 12px 0; }
+      .section-header { padding: 14px 16px; }
+      .section-body { padding: 16px 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>焱焱APP 隐私政策</h1>
+  <div class="meta">
+    <span>生效日期：2026年5月10日</span>
+    <span>更新日期：2026年5月10日</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 引言 Notice -->
+  <div class="notice-banner">
+    <strong>温馨提示：</strong>请您在使用焱焱APP前，仔细阅读并充分理解本隐私政策全部内容，尤其是加粗、标星的免责及权利限制条款。<strong>若您使用本APP，即视为您已阅读、理解并同意本隐私政策的全部内容。</strong>若您不同意本政策，请立即停止使用本APP。
+  </div>
+
+  <!-- 一、引言 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">一</div>
+      <span class="section-title">引言</span>
+    </div>
+    <div class="section-body">
+      <p>欢迎您使用焱焱APP（以下简称"本APP"），本APP是一款聚合各大电商平台公开销售数据、生成商品销量及热度榜单的服务平台。本隐私政策旨在明确本APP运营方（以下简称"我们"）在您使用本APP服务时，如何收集、存储、保护您的个人信息，以及您对个人信息所享有的权利。</p>
+    </div>
+  </div>
+
+  <!-- 二、适用范围 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">二</div>
+      <span class="section-title">适用范围</span>
+    </div>
+    <div class="section-body">
+      <p>本隐私政策适用于您通过本APP移动端应用程序、小程序、网页版等所有渠道，使用本APP全部服务的行为，涵盖本APP提供的电商数据展示、榜单查询、商品筛选、数据订阅等所有功能。</p>
+    </div>
+  </div>
+
+  <!-- 三、我们收集的信息 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">三</div>
+      <span class="section-title">我们收集的信息</span>
+    </div>
+    <div class="section-body">
+      <h3>（一）您主动提供的信息</h3>
+      <ol>
+        <li><span><strong>注册/登录信息：</strong>若您选择注册账号，我们会收集您的手机号码、验证码、设置的账号密码；若您选择第三方快捷登录（微信、QQ等），我们会获取您第三方账号的昵称、头像、唯一标识信息。</span></li>
+        <li><span><strong>个性化设置信息：</strong>您主动设置的搜索历史、浏览记录等个性化配置信息。</span></li>
+        <li><span><strong>反馈与客服信息：</strong>您向我们提交的意见反馈、投诉建议、问题咨询时填写的联系方式、问题描述等信息，用于为您处理相关诉求。</span></li>
+      </ol>
+
+      <h3>（二）我们自动收集的信息</h3>
+      <ol>
+        <li><span><strong>设备信息：</strong>为保障服务正常运行、优化用户体验，我们会自动收集您使用的移动设备型号、操作系统版本、设备唯一标识符（OAID/IDFA）、IP地址、网络环境、屏幕分辨率等基础设备信息。</span></li>
+        <li><span><strong>使用行为信息：</strong>自动记录您使用本APP的操作日志，包括浏览的榜单、查看的商品、搜索关键词、停留时长、访问时间、点击行为等，用于优化榜单算法、提升服务精准度。</span></li>
+        <li><span><strong>日志信息：</strong>记录本APP运行过程中的相关日志，包括服务故障、访问记录等，用于排查问题、保障服务稳定。</span></li>
+      </ol>
+
+      <h3>（三）第三方电商平台数据说明</h3>
+      <div class="highlight-box">本APP展示的各大电商平台销售数据、商品信息、销量榜单等内容，均来源于各电商平台公开可获取的合规数据接口、公开页面数据，我们仅对该类公开数据进行聚合、整理、展示，<strong>不会收集、存储、处理电商平台用户的个人隐私信息</strong>，也不会非法抓取电商平台非公开、受保护的数据内容。</div>
+    </div>
+  </div>
+
+  <!-- 四、信息的使用目的 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">四</div>
+      <span class="section-title">信息的使用目的</span>
+    </div>
+    <div class="section-body">
+      <p>我们严格遵循"合法、正当、必要、最小必要"原则，收集及使用您的个人信息，仅用于以下目的：</p>
+      <ol>
+        <li><span>为您提供本APP核心榜单展示、数据查询、商品浏览等基础服务；</span></li>
+        <li><span>验证您的账号身份，保障账号安全，防范账号被盗、欺诈等风险；</span></li>
+        <li><span>优化本APP功能、界面设计，提升服务质量及用户体验；</span></li>
+        <li><span>向您推送您关注的榜单更新、商品动态、服务通知（<strong>您可随时关闭推送</strong>）；</span></li>
+        <li><span>处理您的意见反馈、客服咨询，解决使用过程中遇到的问题；</span></li>
+        <li><span>开展数据统计分析，研究电商数据趋势，优化榜单算法；</span></li>
+        <li><span>遵守法律法规、监管要求，配合国家有权机关的调查、执法工作。</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 五、信息的共享、转让与公开披露 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">五</div>
+      <span class="section-title">信息的共享、转让与公开披露</span>
+    </div>
+    <div class="section-body">
+      <h3>（一）信息共享</h3>
+      <ol>
+        <li><span>我们不会未经您授权，向第三方出售、泄露您的个人信息；</span></li>
+        <li>
+          <span>为实现本APP核心服务，我们会向以下第三方共享必要信息，且要求第三方严格遵守隐私保护义务：
+            <ul style="margin-top:10px; padding-left:0;">
+              <li><span><span class="tag">登录</span>第三方登录服务商：仅共享账号登录所需的必要信息，用于完成快捷登录验证；</span></li>
+              <li><span><span class="tag">数据</span>数据服务合作方：仅共享匿名化、去标识化的统计数据，用于电商数据合规聚合、分析；</span></li>
+              <li><span><span class="tag">客服</span>客服、技术服务提供商：仅共享处理您诉求所需的信息，用于为您提供售后及技术支持。</span></li>
+            </ul>
+          </span>
+        </li>
+        <li><span>第三方电商平台：本APP仅从电商平台合规获取公开数据，不向电商平台回传您的个人信息，您与电商平台之间的个人信息处理，遵循对应平台的隐私政策。</span></li>
+      </ol>
+
+      <h3>（二）信息转让</h3>
+      <p>我们不会主动转让您的个人信息，若因公司合并、分立、收购、资产转让等情形需转让，我们会提前告知您相关情况，并要求受让方继续受本隐私政策约束。</p>
+
+      <h3>（三）公开披露</h3>
+      <p>我们仅在以下情形下，依法公开披露您的个人信息：</p>
+      <ol>
+        <li><span>获得您明确同意后；</span></li>
+        <li><span>依据法律法规、监管要求、司法判决/裁定，或配合国家有权机关执法、调查要求；</span></li>
+        <li><span>为维护社会公共利益、本APP及其他用户合法权益，且在必要合理范围内。</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 六、信息的存储与保护 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">六</div>
+      <span class="section-title">信息的存储与保护</span>
+    </div>
+    <div class="section-body">
+      <h3>（一）信息存储</h3>
+      <ol>
+        <li><span>我们会在实现本隐私政策所述目的所需的最短期限内存储您的个人信息，超出期限后，我们会对您的个人信息进行删除或匿名化处理；</span></li>
+        <li><span>您的个人信息存储于中华人民共和国境内，不会跨境传输您的个人信息，法律法规另有规定的除外。</span></li>
+      </ol>
+
+      <h3>（二）信息保护</h3>
+      <ol>
+        <li><span>我们采用符合行业标准的安全技术、管理措施保护您的个人信息，包括数据加密、访问权限控制、安全审计、防火墙防护等，防止信息泄露、篡改、丢失、非法访问；</span></li>
+        <li><span>我们对员工及第三方合作伙伴进行隐私安全培训，仅授权有必要知晓的人员接触您的个人信息，并签订保密协议；</span></li>
+        <li><span>若发生个人信息泄露等安全事件，我们会立即启动应急预案，采取补救措施，并按照法律法规要求及时通知您及相关监管部门。</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 七、用户个人信息权利 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">七</div>
+      <span class="section-title">用户个人信息权利</span>
+    </div>
+    <div class="section-body">
+      <p>您有权依法行使以下个人信息相关权利，我们会按照法律法规要求为您提供实现途径：</p>
+      <ol>
+        <li><span><strong>查询/访问权：</strong>查询、访问您的个人信息及使用记录；</span></li>
+        <li><span><strong>更正/修改权：</strong>更正、修改您的个人账号信息、个性化设置信息；</span></li>
+        <li><span><strong>删除权：</strong>在符合法律法规及本政策约定的情形下，申请删除您的个人信息；</span></li>
+        <li><span><strong>注销账号权：</strong>随时申请注销本APP账号，账号注销后，我们将停止为您提供服务，并依法处理您的个人信息；</span></li>
+        <li><span><strong>撤回同意权：</strong>随时撤回您对个人信息收集、使用的授权同意，撤回后我们将停止相关信息处理，但不影响此前基于您同意开展的信息处理行为；</span></li>
+        <li><span><strong>获取信息副本权：</strong>申请获取您个人信息的副本；</span></li>
+        <li><span><strong>投诉举报权：</strong>对我们的个人信息处理行为提出投诉、举报。</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 八、第三方服务说明 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">八</div>
+      <span class="section-title">第三方服务说明</span>
+    </div>
+    <div class="section-body">
+      <p>本APP中可能包含第三方电商平台的链接、插件、服务接口，您点击跳转至第三方平台后，将适用该第三方平台的隐私政策、服务条款，我们不对第三方平台的隐私保护行为承担责任，请您仔细阅读第三方平台的相关政策。</p>
+    </div>
+  </div>
+
+  <!-- 九、未成年人隐私保护 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">九</div>
+      <span class="section-title">未成年人隐私保护</span>
+    </div>
+    <div class="section-body">
+      <p>本APP主要面向成年人提供服务，若您是未满18周岁的未成年人，请在监护人陪同下阅读本隐私政策，并在监护人同意后使用本APP。我们不会主动收集未成年人的个人信息，若发现误收，会立即删除相关信息。</p>
+    </div>
+  </div>
+
+  <!-- 十、隐私政策的更新 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">十</div>
+      <span class="section-title">隐私政策的更新</span>
+    </div>
+    <div class="section-body">
+      <p>我们可能根据法律法规更新、业务调整、服务升级等情况，不定期修改本隐私政策，更新后的政策将在本APP内公示，公示后生效。若政策发生重大变更，我们会通过APP弹窗、消息通知等方式再次告知您。请您定期查看本隐私政策，若您继续使用本APP，视为同意更新后的隐私政策。</p>
+    </div>
+  </div>
+
+  <!-- 十一、免责声明 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">十一</div>
+      <span class="section-title">免责声明 ⭐</span>
+    </div>
+    <div class="section-body">
+      <div class="disclaimer-box">
+        <strong>请特别注意以下免责条款：</strong>
+      </div>
+      <ol style="margin-top:12px">
+        <li><span>本APP仅聚合、展示各大电商平台公开合规的销售数据，<strong>不对数据的真实性、准确性、完整性、时效性承担保证责任</strong>，数据最终以对应电商平台官方数据为准；</span></li>
+        <li><span>我们已采取合理措施保障数据获取、展示的合规性，若因第三方电商平台数据接口调整、数据下架、平台规则变更等原因，导致本APP数据展示异常，<strong>我们不承担相关责任</strong>；</span></li>
+        <li><span>您因使用本APP、跳转至第三方电商平台进行交易、操作所产生的风险及损失，由您自行承担，<strong>我们不承担违约责任</strong>；</span></li>
+        <li><span>因不可抗力、政府行为、网络攻击、第三方过错等不可预见、不可抗拒原因，导致您个人信息泄露、服务中断的，<strong>我们不承担责任</strong>，但会积极采取补救措施。</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 十二、争议解决 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">十二</div>
+      <span class="section-title">争议解决</span>
+    </div>
+    <div class="section-body">
+      <p>本隐私政策的订立、执行、解释及争议解决，均适用中华人民共和国法律。若您与我们就本隐私政策相关事宜发生争议，首先通过友好协商解决；协商不成的，任何一方均有权向【本APP运营方所在地】有管辖权的人民法院提起诉讼。</p>
+    </div>
+  </div>
+
+  <!-- 十三、联系我们 -->
+  <div class="contact-card">
+    <h2>
+      <span class="icon-circle">✉</span>
+      联系我们（第十三条）
+    </h2>
+    <p style="font-size:13px; color:#888; margin-bottom:16px;">若您对本隐私政策有任何疑问、意见、建议，或需行使个人信息相关权利，可通过以下方式联系我们：</p>
+    <div class="contact-item">
+      <span class="label">客服邮箱</span>
+      <span class="value"><a href="mailto:ab365155624@gmail.com">ab365155624@gmail.com</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="label">客服电话</span>
+      <span class="value"><a href="tel:13043458152">130-4345-8152</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="label">联系地址</span>
+      <span class="value">中国广东省深圳市宝安区新安街道云顶嘉园A栋<br>数据合规与隐私保护部（收）</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <p>焱焱APP 隐私政策</p>
+    <p>生效日期：2026年5月10日 &nbsp;|&nbsp; 更新日期：2026年5月10日</p>
+    <p style="margin-top:8px;">© 2026 焱焱APP 版权所有</p>
+  </div>
+
+</div>
+</body>
+</html>
